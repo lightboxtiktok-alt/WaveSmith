@@ -3,49 +3,28 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>WaveSmith Prototype</title>
+  <title>WaveSmith</title>
   <link rel="stylesheet" href="ws.css" />
+  <!-- Include lame.js for MP3 export -->
+  <script src="https://cdn.jsdelivr.net/npm/lamejs@1.2.1/lame.min.js"></script>
 </head>
 <body>
   <div class="app-container">
     <div class="sketch-area">
       <div class="canvas-wrapper">
         <canvas id="waveCanvas"></canvas>
-        <div class="time-labels" id="timeLabels"></div>
         <div class="amplitude-labels" id="amplitudeLabels"></div>
       </div>
     </div>
 
     <div class="floating-bar">
       <div class="bar-content">
-        <button class="icon-button" id="settingsBtn">⚙️</button>
-        <div class="controls">
-          <button class="icon-button">▶️</button>
-          <button class="icon-button">⏹️</button>
-        </div>
-        <button class="icon-button save-button" id="exportBtn">💾</button>
+        <button class="icon-button" id="playBtn">▶️</button>
+        <input type="range" id="volumeSlider" class="volume-slider" min="0" max="1" step="0.01" value="1" />
+        <button class="icon-button" id="exportBtn">💾 Save</button>
+        <button class="icon-button" id="loadBtn">Load</button>
         <button class="icon-button" id="importBtn">📥 Import</button>
-      </div>
-    </div>
-  </div>
-
-  <div class="sidebar" id="sidebar">
-    <div class="sidebar-header">
-      <span class="close-sidebar" id="closeSidebar">✕</span>
-      <h2>Settings</h2>
-    </div>
-  </div>
-
-  <div class="export-overlay" id="exportOverlay">
-    <div class="export-popup">
-      <div class="export-header">
-        <span class="close-export" id="closeExport">✕</span>
-        <h3>Export</h3>
-      </div>
-      <div class="export-options">
-        <button>Export to WAV</button>
-        <button>Export to MP3</button>
-        <button>Export to FLAC</button>
+        <button class="icon-button" id="exportAudioBtn">Export</button>
       </div>
     </div>
   </div>
@@ -54,6 +33,7 @@
     <div class="loading-progress"></div>
   </div>
 
-  <script src="main.js"></script>
+  <!-- Load main.js as module -->
+  <script type="module" src="main.js"></script>
 </body>
 </html>
