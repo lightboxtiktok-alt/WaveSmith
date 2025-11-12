@@ -12,6 +12,13 @@ export class UI {
   }
 
   setupButtons() {
+    // Play button
+    const playBtn = document.getElementById('playBtn');
+    if (playBtn) {
+      playBtn.addEventListener('click', () => {
+        this.audioEngine.play(this.dataModel.points, this.dataModel.duration);
+      });
+    }
 
     // Export button
     const exportBtn = document.getElementById('exportBtn');

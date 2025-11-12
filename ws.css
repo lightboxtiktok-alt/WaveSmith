@@ -54,6 +54,23 @@ body {
   max-width: 650px;
 }
 
+.icon-button {
+  background: none;
+  border: none;
+  color: #e0e0e0;
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: transform 0.25s, color 0.25s, background 0.3s;
+  padding: 6px 10px;
+  border-radius: 10px;
+}
+
+.icon-button:hover {
+  color: #00bfff;
+  background: rgba(255, 255, 255, 0.05);
+  transform: scale(1.15);
+}
+
 .save-button {
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.08);
@@ -151,7 +168,7 @@ body {
 }
 
 .export-popup {
-  background: rgba(255, 255, 255, 0.10);
+  background: rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(3px) saturate(120%);
   border-radius: 20px;
   padding: 20px;

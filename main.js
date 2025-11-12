@@ -53,22 +53,6 @@ try {
   console.error(error.stack);
 }
 
-// Hook up play button
-
-
-// Hook up volume slider
-const volumeSlider = document.createElement('input');
-volumeSlider.type = 'range';
-volumeSlider.min = 0;
-volumeSlider.max = 1;
-volumeSlider.step = 0.01;
-volumeSlider.value = 1;
-volumeSlider.className = 'volume-slider';
-document.querySelector('.bar-content').appendChild(volumeSlider);
-volumeSlider.addEventListener('input', () => {
-  audioEngine.setVolume(volumeSlider.value);
-});
-
 // Hook up export/load buttons
 const exportBtn = document.getElementById('exportBtn');
 if (exportBtn) {
@@ -85,33 +69,6 @@ if (exportBtn) {
     URL.revokeObjectURL(url);
   });
 }
-
-const loadBtn = document.createElement('button');
-loadBtn.innerText = 'Load';
-loadBtn.className = 'icon-button';
-document.querySelector('.bar-content').appendChild(loadBtn);
-loadBtn.addEventListener('click', () => {
-  const input = document.createElement('input');
-  input.type = 'file';
-  input.accept = '.json';
-  input.addEventListener('change', (e) => {
-    const file = e.target.files[0];
-    if (!file) return;
-    const reader = new FileReader();
-    reader.onload = (event) => {
-      try {
-        const loadedPoints = JSON.parse(event.target.result);
-        points.splice(0, points.length, ...loadedPoints);
-        renderer.points = points;
-        renderer.draw();
-      } catch (error) {
-        console.error('Error loading JSON:', error);
-      }
-    };
-    reader.readAsText(file);
-  });
-  input.click();
-});
 
 const importBtn = document.getElementById('importBtn');
 if (importBtn) {
