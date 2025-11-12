@@ -12,21 +12,6 @@ export class UI {
   }
 
   setupButtons() {
-    // Play button
-    const playBtn = document.getElementById('playBtn');
-    if (playBtn) {
-      playBtn.addEventListener('click', () => {
-        this.audioEngine.play(this.dataModel.points, this.dataModel.duration);
-      });
-    }
-
-    // Volume slider
-    const volumeSlider = document.getElementById('volumeSlider');
-    if (volumeSlider) {
-      volumeSlider.addEventListener('input', () => {
-        this.audioEngine.setVolume(volumeSlider.value);
-      });
-    }
 
     // Export button
     const exportBtn = document.getElementById('exportBtn');

@@ -54,11 +54,7 @@ try {
 }
 
 // Hook up play button
-const playBtn = document.createElement('button');
-playBtn.innerText = '▶️';
-playBtn.className = 'icon-button';
-document.querySelector('.bar-content').appendChild(playBtn);
-playBtn.addEventListener('click', () => audioEngine.play());
+
 
 // Hook up volume slider
 const volumeSlider = document.createElement('input');
