@@ -122,7 +122,7 @@ export class CanvasRenderer {
     if (dataModel.points.length === 0) return;
 
     this.ctx.strokeStyle = CONFIG.COLORS.WAVEFORM;
-    this.ctx.lineWidth = 2;
+    this.ctx.lineWidth = 1.2;
     this.ctx.beginPath();
     dataModel.points.forEach((p, i) => {
       const x = this.timeToX(dataModel, p.time);
@@ -141,7 +141,7 @@ export class CanvasRenderer {
       const x = this.timeToX(dataModel, p.time);
       const y = this.amplitudeToY(p.amplitude);
       this.ctx.beginPath();
-      this.ctx.arc(x, y, 4, 0, Math.PI * 2);
+      this.ctx.arc(x, y, 4, 0, Math.PI * 4);
       this.ctx.fill();
     });
   }

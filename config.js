@@ -19,10 +19,10 @@ const DEFAULT_CONFIG = {
     GRID_MAJOR: '#404040',
     GRID_LABELS: '#808080',
     GRID_AMPLITUDE: '#333',
-    WAVEFORM: '#00ffc8',
-    POINT: '#ff0070',
-    SELECTION: '#ff00ff80',
-    SELECTION_BOX: '#ff00ff20'
+    WAVEFORM: '#00ffd5ff',
+    POINT: '#63fff2ff',
+    SELECTION: '#ffc400ff',
+    SELECTION_BOX: '#ffffff20'
   }
 };
 
