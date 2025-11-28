@@ -39,7 +39,7 @@ body {
   backdrop-filter: blur(5px) saturate(120%);
   border-top: 1px solid rgba(255, 255, 255, 0.08);
   display: flex;
-  align-items: center;
+  align-items: str;
   justify-content: center;
   box-shadow: 0 -2px 15px rgba(0, 0, 0, 0.3);
   z-index: 100;
@@ -404,3 +404,28 @@ body {
   background: #00bfff;
   transition: width 0.3s;
 }
+
+.floating-bar {
+  display: flex;
+  align-items: stretch;
+}
+
+.bar-content {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.icon-button {
+  height: 100%;
+  padding: 0 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.play-icon {
+  height: 35%;
+  width: auto;
+}
+
